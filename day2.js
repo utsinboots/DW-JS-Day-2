@@ -3,13 +3,15 @@ function checkAge(){
     const resultElement = document.getElementById("result")     //to shorten the code
 
     var age = parseInt(document.getElementById("age").value)
-    if (age < 18){
+    if (age > 0 && age < 18){
         //document.getElementById("result").innerHTML = "<b>You are NOT eligible to vote</b>";
         resultElement.innerHTML = "<b>You are NOT eligible to vote</b>";
     }
-    else{
-        //document.getElementById("result").innerHTML = "<b>You are eligible to vote</b>";
+    else if (age >= 18){
         resultElement.innerHTML = "<b>You are eligible to vote</b>";
+    }
+    else{
+        resultElement.innerHTML = "<b>Invalid age</b>";
     }
     //document.getElementById("age").value = ""
     ageElement.value = ""
@@ -48,6 +50,7 @@ function checkAge(){
         default:
             resultElement.innerHTML = "Invalid Day"; 
     }
+    dayElement.value = ""
  }
 
  function checkAgeGroup()
